@@ -26,9 +26,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '41t2=u609-sdzz0)0e^ah*c5c9f0%v%9smtn7dj#2p=pj2hck3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True  # TODO: remove in production
+# DEBUG = True  # TODO: remove in production
 
-ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0']
+ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0', 'tenderhack.pythonanywhere.com']
 
 ####################################
 # Internationalization
@@ -97,10 +97,10 @@ WSGI_APPLICATION = 'actum_hack.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mysql',
-        'USER': 'root',
-        'PASSWORD': 'password',
-        'HOST': '127.0.0.1',
+        'NAME': 'tenderhack$mysql',
+        'USER': 'tenderhack',
+        'PASSWORD': 'password123',
+        'HOST': 'tenderhack.mysql.pythonanywhere-services.com',
         'PORT': 3306
     }
 }
