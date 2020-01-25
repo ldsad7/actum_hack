@@ -51,7 +51,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_filters',
     'corsheaders',
+
     'rest_framework',
+    'drf_yasg',
 
     'procurements'
 ]
@@ -97,7 +99,7 @@ WSGI_APPLICATION = 'actum_hack.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mysql',
+        'NAME': 'tmp',
         'USER': 'root',
         'PASSWORD': 'password',
         'HOST': '127.0.0.1',
