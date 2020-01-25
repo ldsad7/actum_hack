@@ -5,6 +5,8 @@ django-phonenumber-field==3.0.1
 phonenumbers==8.10.18
 psycopg2==2.8.4
 PyMySQL==0.9.3
+drf_yasg==1.16.1
+packaging==19.1
 
 # rest
 djangorestframework==3.10.3
