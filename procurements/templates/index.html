@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tender Hack Recommendation System</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Lato:400,700,300,100italic');
+        $color: #00aeff;
+        $color2: complement($color);
+        body {
+            color: #000;
+            font-size: 24pt;
+            font-family: 'Lato',sans-serif;
+            background: complement(lighten($color2,10%));
+        }
+        content {
+            background: #eee;
+            margin: 0px auto;
+            display: block;
+            width: 75%;
+            text-align: center;
+            padding: 50px;
+            font-weight: 300;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            box-shadow: inset -3px -3px 5px 0px rgba(0,0,0,0.75);
+        }
+        h1 {
+            font-weight: 700;
+            font-size: 1.5em;
+            margin-bottom: 0.2em;
+        }
+        h2 {
+            font-weight: 100;
+            font-style: italic;
+            font-size: 0.8em;
+            margin: 0;
+        }
+        a {
+            font-weight: 400;
+            color: $color;
+            &:hover {
+                color: $color2;
+            }
+        }
+        .middle a {
+            text-decoration: none;
+            font-size: 1em;
+            position: relative;
+            transition: all 0.6s;
+            &:before {
+                content: "";
+                width: 0;
+                height: 0.1em;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                background: $color;
+                transition: all 0.3s;
+            }
+            &:hover {
+                &:before {
+                    width: 100%;
+                    left: 0;
+                    background: $color2;
+                }
+            }
+        }
+        .left a {
+            text-decoration: none;
+            font-size: 1em;
+            position: relative;
+            transition: all 0.6s;
+            &:before {
+                content: "";
+                width: 0;
+                height: 0.1em;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                background: $color;
+                transition: all 0.3s;
+            }
+            &:hover {
+                &:before {
+                    width: 100%;
+                    left: 0;
+                    background: $color2;
+                }
+            }
+        }
+        .right a {
+            text-decoration: none;
+            font-size: 1em;
+            position: relative;
+            transition: all 0.6s;
+            &:before {
+                content: "";
+                width: 0;
+                height: 0.1em;
+                position: absolute;
+                bottom: 0;
+                left: 100%;
+                background: $color;
+                transition: all 0.3s;
+            }
+            &:hover {
+                &:before {
+                    width: 100%;
+                    left: 0;
+                    background: $color2;
+                }
+            }
+        }
+        .pass a {
+            text-decoration: none;
+            font-size: 1em;
+            position: relative;
+            transition: all 0.6s;
+            &:before {
+                content: "";
+                width: 0;
+                height: 0.1em;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                background: $color;
+                transition: all 0.3s;
+            }
+            &:hover {
+                &:before {
+                    width: 100%;
+                    left: 0;
+                    background: $color2;
+                }
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <content style="font-size:50px;">
+      <h1>Paths of the site</h1>
+      <h2>Hover my links!</h2>
+      <p class="left">Docs: <a href="api/v1/">API,</a>&nbsp;<a href="docs/">Swagger.</a></p>
+      <p class="middle">Where is <a href="admin/">Admin Panel</a>&nbsp;in this nonsense?</p>
+      <p class="pass">😊</p>
+    </content>
+</body>
+</html>

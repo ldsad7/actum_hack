@@ -8,6 +8,8 @@ PyMySQL==0.9.3
 drf_yasg==1.16.1
 packaging==19.1
 
+gensim==3.8.1
+
 # rest
 djangorestframework==3.10.3
 django-cors-headers==3.0.2

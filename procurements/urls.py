@@ -10,7 +10,7 @@ from procurements.views import PurchaseViewSet, ProducerViewSet, CountryViewSet,
 
 api_router = DefaultRouter()
 api_router.register('purchases', PurchaseViewSet, 'purchases')
-api_router.register('products', ProducerViewSet, 'products')
+api_router.register('producers', ProducerViewSet, 'producers')
 api_router.register('countries', CountryViewSet, 'countries')
 api_router.register('production_types', ProductionTypeViewSet, 'production_types')
 api_router.register('product_types', ProductTypeViewSet, 'product_types')

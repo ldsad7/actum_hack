@@ -9,3 +9,13 @@ class IncorrectArgument(APIException):
 class NoSuchId(APIException):
     status_code = 400
     default_detail = 'There is no such id in the database.'
+
+
+class NoSuchParameter(APIException):
+    status_code = 400
+    default_detail = 'There is no such parameter in the database.'
+
+
+class NoWordInModel(APIException):
+    status_code = 400
+    default_detail = 'There is no such word in the Word2Vec model.'

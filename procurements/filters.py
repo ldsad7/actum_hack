@@ -7,3 +7,8 @@ class PurchaseFilter(filters.FilterSet):
     author_id = filters.BaseInFilter('author_id')
     is_active = filters.BooleanFilter('is_active')
     is_deleted = filters.BooleanFilter('is_deleted')
+
+
+class ProductFilter(filters.FilterSet):
+    external_id = filters.BaseInFilter('external_id')
+    name = filters.CharFilter('name', 'icontains')

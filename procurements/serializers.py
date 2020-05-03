@@ -19,6 +19,47 @@ class PurchaseReadSerializer(serializers.ModelSerializer):
         fields = '__all__'
         model = Purchase
 
+    contractor_item = serializers.SerializerMethodField()
+    participant_items = serializers.SerializerMethodField()
+    product_items = serializers.SerializerMethodField()
+    method = serializers.SerializerMethodField()
+    law = serializers.SerializerMethodField()
+    type = serializers.SerializerMethodField()
+    offer = serializers.SerializerMethodField()
+
+    @staticmethod
+    def get_contractor_item(instance):
+        if instance.contractor_item is not None:
+            if instance.contractor_item is not None:
+                return ContractorSerializer(instance.contractor_item.contractor).data
+
+    @staticmethod
+    def get_participant_items(instance):
+        return CustomerSerializer([elem.customer for elem in instance.participant_items.all()], many=True).data
+
+    @staticmethod
+    def get_product_items(instance):
+        return ProductSerializer([elem.product for elem in instance.product_items.all()], many=True).data
+
+    @staticmethod
+    def get_method(instance):
+        return PurchaseMethodSerializer(instance.method).data
+
+    @staticmethod
+    def get_law(instance):
+        if instance.law is not None:
+            return LawSerializer(instance.law).data
+
+    @staticmethod
+    def get_type(instance):
+        if instance.law is not None:
+            return PurchaseTypeSerializer(instance.type).data
+
+    @staticmethod
+    def get_offer(instance):
+        if instance.offer is not None:
+            return OfferSerializer(instance.offer).data
+
 
 class ProducerSerializer(serializers.ModelSerializer):
     class Meta:
@@ -154,6 +195,53 @@ class ProductReadSerializer(serializers.ModelSerializer):
         fields = '__all__'
         model = Product
 
+    producer = serializers.SerializerMethodField()
+    country = serializers.SerializerMethodField()
+    production_type = serializers.SerializerMethodField()
+    product_type = serializers.SerializerMethodField()
+    okpd2_product_type = serializers.SerializerMethodField()
+    characteristics = serializers.SerializerMethodField()
+    material = serializers.SerializerMethodField()
+    colour = serializers.SerializerMethodField()
+
+    @staticmethod
+    def get_producer(instance):
+        if instance.producer is not None:
+            return ProducerSerializer(instance.producer).data
+
+    @staticmethod
+    def get_country(instance):
+        if instance.country is not None:
+            return CountrySerializer(instance.country).data
+
+    @staticmethod
+    def get_production_type(instance):
+        if instance.production_type is not None:
+            return ProductionTypeSerializer(instance.production_type).data
+
+    @staticmethod
+    def get_product_type(instance):
+        if instance.product_type is not None:
+            return ProductTypeSerializer(instance.product_type).data
+
+    @staticmethod
+    def get_okpd2_product_type(instance):
+        if instance.okpd2_product_type is not None:
+            return OKPD2ProductTypeSerializer(instance.okpd2_product_type).data
+
+    @staticmethod
+    def get_characteristics(instance):
+        return CharacteristicSerializer(instance.characteristics, many=True).data
+
+    @staticmethod
+    def get_material(instance):
+        if instance.material is not None:
+            return MaterialSerializer(instance.material).data
+
+    @staticmethod
+    def get_colour(instance):
+        return ColourSerializer(instance.colour, many=True).data
+
 
 class RegionSerializer(serializers.ModelSerializer):
     class Meta:
@@ -214,6 +302,24 @@ class CustomerReadSerializer(serializers.ModelSerializer):
         fields = '__all__'
         model = Customer
 
+    contact_person = serializers.SerializerMethodField()
+    registration_region = serializers.SerializerMethodField()
+    production_types = serializers.SerializerMethodField()
+
+    @staticmethod
+    def get_contact_person(instance):
+        if instance.contact_person is not None:
+            return ContactPersonSerializer(instance).data
+
+    @staticmethod
+    def get_registration_region(instance):
+        if instance.registration_region is not None:
+            return RegionSerializer(instance.registration_region).data
+
+    @staticmethod
+    def get_production_types(instance):
+        return ProductionTypeSerializer(instance.production_types, many=True).data
+
 
 class ContractorSerializer(serializers.ModelSerializer):
     class Meta:
@@ -229,6 +335,17 @@ class ContractorReadSerializer(serializers.ModelSerializer):
         fields = '__all__'
         model = Contractor
 
+    registration_region = serializers.SerializerMethodField()
+    production_types = serializers.SerializerMethodField()
+
+    @staticmethod
+    def get_registration_region(instance):
+        if instance.registration_region is not None:
+            return RegionSerializer(instance.registration_region).data
+
+    @staticmethod
+    def get_production_types(instance):
+        return ProductionTypeSerializer(instance.production_types, many=True).data
 
 class PurchaseMethodSerializer(serializers.ModelSerializer):
     class Meta:
