@@ -11,7 +11,7 @@ packaging==19.1
 gensim==3.8.1
 
 # rest
-djangorestframework==3.10.3
+djangorestframework==3.11.2
 django-cors-headers==3.0.2
 django-filter==2.1.0
 webweb==0.0.37
